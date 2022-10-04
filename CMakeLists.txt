@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.12)
 include(pico_sdk_import.cmake)
-project(Pico_ePaper_Code)
+project(pico_display_driver)
 pico_sdk_init()
 
-#添加编译子目录
 add_subdirectory(lib/Config)
 add_subdirectory(lib/Infrared)
 add_subdirectory(lib/OLED)
@@ -15,7 +14,6 @@ add_subdirectory(examples)
 
 
 
-#添加头文件目录
 include_directories(examples)
 include_directories(./lib/Config)
 include_directories(./lib/GUI)
@@ -25,7 +23,6 @@ include_directories(./lib/Infrared)
 include_directories(./lib/OLED)
 
 
-# 生成可执行文件
 add_executable(main 
 src/main.c
 )
