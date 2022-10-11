@@ -47,12 +47,14 @@ typedef enum {
 #define WHITE          0xFFFF
 #define BLACK          0x0000
 #define BLUE           0x001F
+#define DARKBLUE       0x10af
 #define BRED           0XF81F
 #define GRED           0XFFE0
 #define GBLUE          0X07FF
 #define RED            0xF800
 #define MAGENTA        0xF81F
 #define GREEN          0x07E0
+#define DARKGREEN      0x0405
 #define CYAN           0x7FFF
 #define YELLOW         0xFFE0
 #define BROWN          0XBC40
@@ -146,7 +148,7 @@ void Paint_DrawBitMap_Block(const unsigned char* image_buffer, UBYTE Region);
 
 void Paint_DrawImage(const unsigned char *image, UWORD xStart, UWORD yStart, UWORD W_Image, UWORD H_Image) ;
 void Paint_DrawImage1(const unsigned char *image, UWORD xStart, UWORD yStart, UWORD W_Image, UWORD H_Image);
- void Paint_BmpWindows(unsigned char x,unsigned char y,const unsigned char *pBmp,\
+void Paint_BmpWindows(unsigned char x,unsigned char y,const unsigned char *pBmp,\
 					unsigned char chWidth,unsigned char chHeight);
 
 

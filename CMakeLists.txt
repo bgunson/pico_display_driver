@@ -14,5 +14,27 @@ add_subdirectory(lib/GUI)
 add_subdirectory(examples)
 
 add_library(pico_display_driver INTERFACE)
-target_include_directories(pico_display_driver INTERFACE examples lib/Config lib/GUI lib/Fonts lib/Icm20948 lib/Infrared lib/LCD lib/OLED)
-target_link_libraries(pico_display_driver INTERFACE examples Config GUI Fonts Icm20948 Infrared LCD OLED pico_stdlib hardware_spi)
+
+target_include_directories(pico_display_driver INTERFACE
+    examples
+    lib/Config
+    lib/GUI
+    lib/Fonts
+    lib/Icm20948
+    lib/Infrared
+    lib/LCD
+    lib/OLED
+)
+
+target_link_libraries(pico_display_driver INTERFACE 
+    examples 
+    Config 
+    GUI 
+    Fonts 
+    Icm20948 
+    Infrared 
+    LCD 
+    OLED 
+    pico_stdlib 
+    hardware_spi
+)

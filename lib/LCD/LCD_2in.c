@@ -302,6 +302,25 @@ void LCD_2IN_DisplayPoint(UWORD X, UWORD Y, UWORD Color)
     LCD_2IN_SendData_16Bit(Color);
 }
 
+/// @brief get 16-bit rgb565 color value for some (x,y) on an image. not tested
+/// @param x image coord
+/// @param y image coord
+/// @param image pointer to the beginning of the image 
+/// @return rgb565 color for the (x,y) point
+uint16_t LCD_2IN_GetPoint(int x, int y, UBYTE *image) 
+{
+	if (x % 2 != 0) {
+		x--;
+	}
+
+	UDOUBLE addr = x + y * LCD_2IN.WIDTH;
+	uint8_t x_1 = image[addr];
+	uint8_t x_2 = image[addr+1];
+
+	return (x_1 << 8) | x_2;
+
+}
+
 void  Handler_2IN_LCD(int signo)
 {
     //System Exit

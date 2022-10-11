@@ -45,8 +45,10 @@ function:
 void LCD_2IN_Init(UBYTE Scan_dir);
 void LCD_2IN_Clear(UWORD Color);
 void LCD_2IN_Display(UBYTE *Image);
+uint16_t LCD_2IN_GetPoint(int x, int y, UBYTE *image);
 void LCD_2IN_DisplayWindows(UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend, UWORD *Image);
 void LCD_2IN_DisplayPoint(UWORD X, UWORD Y, UWORD Color);
+
 
 void Handler_2IN_LCD(int signo);
 #endif
